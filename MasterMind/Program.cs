@@ -15,16 +15,20 @@ namespace MasterMind
             //Console.WriteLine("1 random integer generated");
             for (int ctr = 0; ctr <= 0; ctr++)
             Console.Write("{0,8:N0}", rand.Next(1, 6));
-            Console.WriteLine("");
+            
 
             Console.WriteLine("Choose a number between 1 and 6.");
             int answerTwo = Convert.ToInt32(Console.ReadLine());
 
-            if (true)
+            if (answerTwo = answerOne)
             {
                 Console.WriteLine("Looks like you nailed it!");
             }
 
+            else
+            {
+                Console.WriteLine("Guess again!");
+            }
 
 
             //bool higher = (rand = answerTwo);
