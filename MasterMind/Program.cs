@@ -10,25 +10,35 @@ namespace MasterMind
         
         {
             var rand = new Random();
-            int answerOne;
+            int answerTwo;
+            int randomNumber = new int();
+
 
             //Console.WriteLine("1 random integer generated");
             for (int ctr = 0; ctr <= 0; ctr++)
-            Console.Write("{0,8:N0}", rand.Next(1, 6));
-            
+            //Console.Write("{0,8:N0}",
+            randomNumber = rand.Next(1, 6);
 
             Console.WriteLine("Choose a number between 1 and 6.");
-            int answerTwo = Convert.ToInt32(Console.ReadLine());
+            answerTwo = Convert.ToInt32(Console.ReadLine());
 
-            if (answerTwo = answerOne)
+            if (answerTwo == randomNumber)
             {
-                Console.WriteLine("Looks like you nailed it!");
+                Console.WriteLine("You got it!");
             }
-
             else
             {
-                Console.WriteLine("Guess again!");
+                Console.WriteLine("Nope!");
             }
+
+            //        {
+            //            Console.WriteLine("Looks like you nailed it!");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("Guess again!");
+            //}
 
 
             //bool higher = (rand = answerTwo);
