@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MasterMind
@@ -11,40 +12,38 @@ namespace MasterMind
         {
             var rand = new Random();
             int answerTwo;
-            //int randomNumber;
-            //int[] userArray;
-            //int[] computerArray;
+            var userList = new List<int>();
+            var computerList = new List<int>();
+            int randomNumbers = new int();
 
-            //Console.WriteLine("1 random integer generated");
-            for (int ctr = 0; ctr <= 1; ctr++)
-                Console.WriteLine("{0,8:N0}", rand.Next(1, 6));
+            //Console.WriteLine("4 random integers generated");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                randomNumbers = rand.Next(1, 6);
+                Console.WriteLine("{0,8:N0}", randomNumbers);
+                computerList.Add(randomNumbers);
 
-            for (int ctr = 0; ctr <= 2; ctr++)
-            {
-                int[] computerArray = new int[2];
-            }
-
-            Console.WriteLine("Guess a two digit number with digits between 1 and 6.");
+            Console.WriteLine("Guess a four digit number with digits between 1 and 6.");
             answerTwo = Convert.ToInt32(Console.ReadLine());
-            for (int ctr = 0; ctr <= 2; ctr++)
-            {
-                int[] userArray = new int[2];
+            for (int ctr = 0; ctr <= 4; ctr++)
+                userList.Add(answerTwo);
 
-                if (userArray[0] == computerArray[0])
+            {
+
+                if (userList[0] == computerList[0])
                 {
                     Console.Write("+");
                 }
-                else if (userArray[0] == computerArray[1])
+                else if (userList[0] == computerList[1])
                 {
                     Console.Write("-");
                 }
-                else if (userArray[0] != computerArray[0])
+                else if (userList[0] != computerList[0])
                 {
-                    Console.WriteLine("Nope!");
+                    Console.WriteLine(" ");
                 }
-                else if (userArray[0] != computerArray[1])
+                else if (userList[0] != computerList[1])
                 {
-                    Console.WriteLine("Nope!");
+                    Console.WriteLine(" ");
                 }
             }
         }
