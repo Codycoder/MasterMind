@@ -14,39 +14,80 @@ namespace MasterMind
             int answerTwo;
             var userList = new List<int>(4);
             var computerList = new List<int>(4);
-            //int randomNumbers = new int();
+            int randomNumber = new int();
+
+            Console.WriteLine("Welcome to MasterMind! Try to guess a 4 digit number. You have ten tries. " +
+                "Press any key to continue");
+            Console.ReadKey();
+            Console.Clear();
 
             //Console.WriteLine("4 random integers generated");
-            for (int i = 0; i <= 3; i++)
-                Console.WriteLine("{0,8:N0}", rand.Next(1, 6));
-                computerList.Add(rand.Next(4));
+            //for (int i = 0; i <= 3; i++)
+            //{
+            //    Console.Write("{0,8:N0}", rand.Next(1, 6));
+            //    computerList.Add(rand.Next(4));
+            //}
+
+            //for (int i = 0; i <= 3; i++)
+
+            //{
+            //    randomNumber = rand.Next(1, 6);     // capture this random number for WriteLine-ing AND computerList.Add!
+            //    Console.Write("{0,8:N0}", randomNumber);
+            //    computerList.Add(randomNumber);
+            //}
+
+            randomNumber = rand.Next(1, 6);     // capture this random number for WriteLine-ing AND computerList.Add!
+            Console.Write("{0,8:N0}", randomNumber);
+
+
+            Console.WriteLine();
+            Console.WriteLine("The computer is ready! Press any key to continue.");
+            Console.ReadKey();
+            Console.Clear();
 
             Console.WriteLine("Guess a four digit number with digits between 1 and 6.");
+            //answerTwo = Convert.ToInt32(Console.ReadLine());
+
+            //for (int ctr = 0; ctr <= 3; ctr++)
+            //{
+            //    userList.Add(answerTwo);
+            //}
+
             answerTwo = Convert.ToInt32(Console.ReadLine());
 
-            for (int ctr = 0; ctr <= 4; ctr++)
-                userList.Add(answerTwo);
-
+            if (answerTwo == randomNumber)
             {
-
-                if (userList[0] == computerList[0])
-                {
-                    Console.Write("+");
-                }
-                else if (userList[0] == computerList[1])
-                {
-                    Console.Write("-");
-                }
-                else if (userList[0] != computerList[0])
-                {
-                    Console.WriteLine(" ");
-                }
-                else if (userList[0] != computerList[1])
-                {
-                    Console.WriteLine(" ");
-                }
+                Console.WriteLine("+");
             }
-        }
 
+            else
+            {
+                Console.WriteLine("-");
+            }
+
+            //if (userList[1] == computerList[1])
+            //{
+            //    Console.WriteLine("+");
+            //}
+
+            //if (userList[2] == computerList[2])
+            //{
+            //    Console.WriteLine("+");
+            //}
+
+            //if (userList[3] == computerList[3])
+            //{
+            //    Console.WriteLine("+");
+            //}
+
+
+
+
+
+
+        }
     }
 }
+
+
+    
