@@ -61,7 +61,7 @@ namespace MasterMind
                 foreach (var item in userList)
 
                 {
-                    if (item == computerList[item])
+                    if ()
                     {
                         Console.WriteLine("+");
                     }
@@ -71,9 +71,9 @@ namespace MasterMind
                     {
                         Console.WriteLine("Nope, try again!");
                     }
-                    correctAnswer = true;
-                    Console.WriteLine("YOU WON!");
-                    break;
+                    //correctAnswer = true;
+                    //Console.WriteLine("YOU WON!");
+                    //break;
 
 
                 }
