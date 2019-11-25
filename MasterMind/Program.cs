@@ -16,7 +16,7 @@ namespace MasterMind
             int Turn = new int();
 
             Console.WriteLine("Welcome to MasterMind! In this game you try to guess a 4 digit number.");
-            Console.WriteLine("You have ten tries. Press any key to continue"); 
+            Console.WriteLine("You have ten tries. Press any key to continue");
             Console.ReadKey();
             Console.Clear();
 
@@ -24,7 +24,7 @@ namespace MasterMind
 
             {
                 // capture this random number for WriteLine-ing AND computerList.Add!
-                randomNumber = rand.Next(1, 6);     
+                randomNumber = rand.Next(1, 6);
                 Console.Write("{0,8:N0}", randomNumber);
                 computerList.Add(randomNumber);
             }
@@ -43,7 +43,7 @@ namespace MasterMind
 
 
             bool correctAnswer = false;
-            Turn = 0;
+            Turn = 1;
             do
             {
 
@@ -63,32 +63,79 @@ namespace MasterMind
                     Console.WriteLine(item);
                 }
 
+                // creating loop to 
                 Console.ReadKey();
 
+
+                if (userList[0] == computerList[0])
                 {
-                    if (userList[0] == computerList[0])
-                    {
-                        Console.WriteLine("YESSSS");
-                        break;
-                    }
+                    Console.Write("+");
+                }
 
-                    else
+                else if (userList[0] != computerList[0])
+                {
+                    Console.Write(" ");
+                }
 
-                    {
-                        Console.WriteLine("Nope, try again!");
-                    }
-                    //correctAnswer = true;
-                    //Console.WriteLine("YOU WON!");
-                    //break;
+                else if (userList[0] == computerList[1])
+                {
+                    Console.Write("-");
+                }
 
+                else if (userList[0] == computerList[2])
+                {
+                    Console.Write("-");
+                }
 
+                else if (userList[0] == computerList[3])
+                {
+                    Console.Write("-");
                 }
 
 
+
+                //foreach (var item in userList.Select((value, index) => new { Value = value, Index = index }))
+                //{
+                //    //Get the value through item.Value;
+                //    int currentValue = item.Value;
+                //    //Get the index through item.Index;
+                //    int currentIndex = item.Index;
+
+                //}
+                //{
+                //    if (userList[0] == computerList[0])
+                //    {
+                //        Console.WriteLine("YESSSS");
+                //        break;
+                //    }
+
+                //    else
+
+                //    {
+                //        Console.WriteLine("Nope, try again!");
+                //    }
+                //correctAnswer = true;
+                //Console.WriteLine("YOU WON!");
+                //break;
+
+
+
+
+
+
+
             } while (Turn <= 10 && correctAnswer == false);
+
+
+        
         }
     }
 }
+            
 
 
-    
+
+
+
+
+
