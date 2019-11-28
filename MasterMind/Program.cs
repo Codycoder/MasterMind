@@ -39,14 +39,13 @@ namespace MasterMind
             //}
 
             Console.ReadKey();
-            Console.Clear();
 
+            bool correctAnswer= false;
 
-            bool correctAnswer = false;
             Turn = 1;
             do
             {
-                userList = new List<int>;
+                userList = new List<int>();
 
                 for (int i = 0; i <= 3; i++)
                 {
@@ -54,13 +53,12 @@ namespace MasterMind
                     string userInput = Console.ReadLine();
                     userList.Add(Convert.ToInt32(userInput));
                 }
-
                 Console.ReadKey();
 
                 // printing numbers to test list population
                 foreach (var item in userList)
                 {
-                    Console.WriteLine(item);
+                    Console.Write(item);
                 }
 
                 // creating loop to 
@@ -82,8 +80,22 @@ namespace MasterMind
                     {
                         Console.WriteLine(" ");
                     }
+
+                    string Win;
+                    Win = "++++";
+                    if (correctAnswer.Equals(Win))
+                    {
+                        Console.WriteLine("You Won!!");
+                        break;
+                    }
+
+                    else
+                    {
+
+                    }
+
+
                 }
-           
             } while (Turn <= 10 && correctAnswer == false);
         }
     }
