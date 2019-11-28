@@ -10,8 +10,8 @@ namespace MasterMind
         {
             var rand = new Random();
             //int userInput = new int();
-            var userList = new List<int>(4);
-            var computerList = new List<int>(4);
+            var userList = new List<int>();
+            var computerList = new List<int>();
             int randomNumber = new int();
             int Turn = new int();
 
@@ -46,10 +46,10 @@ namespace MasterMind
             Turn = 1;
             do
             {
+                userList = new List<int>;
 
                 for (int i = 0; i <= 3; i++)
                 {
-
                     Console.WriteLine("Guess a digit");
                     string userInput = Console.ReadLine();
                     userList.Add(Convert.ToInt32(userInput));
@@ -66,68 +66,25 @@ namespace MasterMind
                 // creating loop to 
                 Console.ReadKey();
 
-
-                if (userList[0] == computerList[0])
+                for (int i = 0; i <= 3; i++)
                 {
-                    Console.Write("+");
+                    if (userList[i] == computerList[i])
+                    {
+                        Console.Write("+");
+                    }
+
+                    else if (computerList.Contains(userList[i]))
+                    {
+                        Console.Write("-");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine(" ");
+                    }
                 }
-
-                else if (userList[0] != computerList[0])
-                {
-                    Console.Write(" ");
-                }
-
-                else if (userList[0] == computerList[1])
-                {
-                    Console.Write("-");
-                }
-
-                else if (userList[0] == computerList[2])
-                {
-                    Console.Write("-");
-                }
-
-                else if (userList[0] == computerList[3])
-                {
-                    Console.Write("-");
-                }
-
-
-
-                //foreach (var item in userList.Select((value, index) => new { Value = value, Index = index }))
-                //{
-                //    //Get the value through item.Value;
-                //    int currentValue = item.Value;
-                //    //Get the index through item.Index;
-                //    int currentIndex = item.Index;
-
-                //}
-                //{
-                //    if (userList[0] == computerList[0])
-                //    {
-                //        Console.WriteLine("YESSSS");
-                //        break;
-                //    }
-
-                //    else
-
-                //    {
-                //        Console.WriteLine("Nope, try again!");
-                //    }
-                //correctAnswer = true;
-                //Console.WriteLine("YOU WON!");
-                //break;
-
-
-
-
-
-
-
+           
             } while (Turn <= 10 && correctAnswer == false);
-
-
-        
         }
     }
 }
