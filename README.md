@@ -1,6 +1,6 @@
 # MasterMind
 
-This is a solution to a coding challenge I received as a pre-interview step after applying to a job.
+This is a solution to a coding challenge I received as a pre-interview step after applying to a job. The solution is a playable console app that I wrote in Visual Studio in C#.
 
 # The Problem:
 
