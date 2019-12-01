@@ -40,12 +40,6 @@ namespace MasterMind
 
             Console.ReadKey();
 
-            //bool correctAnswer;
-            //Turn = 1;
-            //while (Turn <= 9)
-            //{
-            //    Turn++;
-            //}
             bool correctAnswer;
             Turn = 1;
 
@@ -55,7 +49,6 @@ namespace MasterMind
                 correctAnswer = true;
                 userList = new List<int>();
                 
-
                 for (int i = 0; i <= 3; i++)
                 {
                     Console.WriteLine("Guess a digit");
@@ -103,7 +96,6 @@ namespace MasterMind
                     {
                         Console.WriteLine("Sorry, you lose!");
                         break;
-
                     }
                 }
 
