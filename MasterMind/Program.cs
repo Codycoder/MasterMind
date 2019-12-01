@@ -25,7 +25,7 @@ namespace MasterMind
             {
                 // capture this random number for WriteLine-ing AND computerList.Add!
                 randomNumber = rand.Next(1, 6);
-                Console.Write("{0,8:N0}", randomNumber);
+                //Console.Write("{0,8:N0}", randomNumber);
                 computerList.Add(randomNumber);
             }
 
@@ -40,12 +40,21 @@ namespace MasterMind
 
             Console.ReadKey();
 
-            bool correctAnswer= false;
-
+            //bool correctAnswer;
+            //Turn = 1;
+            //while (Turn <= 9)
+            //{
+            //    Turn++;
+            //}
+            bool correctAnswer;
             Turn = 1;
+
             do
             {
+                Turn++;
+                correctAnswer = true;
                 userList = new List<int>();
+                
 
                 for (int i = 0; i <= 3; i++)
                 {
@@ -60,6 +69,7 @@ namespace MasterMind
                 {
                     Console.Write(item);
                 }
+                Console.WriteLine(" That's your guess? Press any key to continue.");
 
                 // creating loop to 
                 Console.ReadKey();
@@ -73,30 +83,31 @@ namespace MasterMind
 
                     else if (computerList.Contains(userList[i]))
                     {
+                        correctAnswer = false;
                         Console.Write("-");
                     }
 
                     else
                     {
+                        correctAnswer = false;
                         Console.WriteLine(" ");
                     }
 
-                    string Win;
-                    Win = "++++";
-                    if (correctAnswer.Equals(Win))
+                    if (correctAnswer.Equals(true) && i == 3)
                     {
                         Console.WriteLine("You Won!!");
                         break;
                     }
 
-                    else
+                    else if (Turn == 11)
                     {
+                        Console.WriteLine("Sorry, you lose!");
+                        break;
 
                     }
-
-
                 }
-            } while (Turn <= 10 && correctAnswer == false);
+
+            } while (Turn < 11 && correctAnswer == false);
         }
     }
 }
